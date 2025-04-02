@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #1e213a;
+        color: white;
+      }
+
+      .container {
+        display: flex;
+        min-height: 100vh;
+      }
+
+      .sidebar {
+        width: 260px;
+        background-color: #e83e8c;
+        padding: 20px 0;
+      }
+
+      .sidebar-header {
+        padding: 0 20px 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        font-weight: bold;
+      }
+
+      .menu-items {
+        padding: 20px 0;
+      }
+
+      .menu-item {
+        display: flex;
+        align-items: center;
+        padding: 12px 20px;
+        color: white;
+        cursor: pointer;
+      }
+
+      .menu-item i {
+        margin-right: 15px;
+        font-size: 20px;
+      }
+
+      .main-content {
+        flex: 1;
+        padding: 20px;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .header h1 {
+        font-size: 24px;
+      }
+
+      .header-buttons {
+        display: flex;
+        gap: 10px;
+      }
+
+      .btn {
+        padding: 8px 15px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .btn-primary {
+        background-color: #007bff;
+        color: white;
+      }
+
+      .btn-secondary {
+        background-color: #17a2b8;
+        color: white;
+      }
+
+      .tabs {
+        display: flex;
+        margin-bottom: 20px;
+      }
+
+      .tab {
+        padding: 8px 15px;
+        background-color: #e83e8c;
+        color: white;
+        border-radius: 5px;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+
+      .chart-container {
+        background-color: #282a42;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .chart-header {
+        margin-bottom: 10px;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+
+      .stat-card {
+        background-color: #282a42;
+        border-radius: 10px;
+        padding: 20px;
+      }
+
+      .stat-title {
+        color: #8b92b2;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+      .stat-value {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .stat-chart {
+        height: 150px;
+        width: 100%;
+      }
+
+      .icon-box {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+      }
+
+      .settings-icon {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        background-color: #282a42;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      .user-icon {
+        width: 35px;
+        height: 35px;
+        background-color: #4caf50;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="sidebar-header">
+          <h2>BD</h2>
+          <p>BLACK DASHBOARD</p>
+        </div>
+        <div class="menu-items">
+          <div class="menu-item">
+            <span class="icon-box">⭕</span>
+            <span>DASHBOARD</span>
+          </div>
+          <div class="menu-item">
+            <span class="icon-box">📄</span>
+            <span>LARAVEL EXAMPLES</span>
+          </div>
+          <div class="menu-item">
+            <span class="icon-box">👤</span>
+            <span>USER PROFILE</span>
+          </div>
+          <div class="menu-item">
+            <span class="icon-box">📋</span>
+            <span>USER MANAGEMENT</span>
+          </div>
+          <div class="menu-item">
+            <span class="icon-box">⚙️</span>
+            <span>ICONS</span>
+          </div>
+          <div class="menu-item">
+            <span class="icon-box">🗺️</span>
+            <span>MAPS</span>
+          </div>
+          <div class="menu-item">
+            <span class="icon-box">🔔</span>
+            <span>NOTIFICATIONS</span>
+          </div>
+          <div class="menu-item">
+            <span class="icon-box">📊</span>
+            <span>TABLE LIST</span>
+          </div>
+          <div class="menu-item">
+            <span class="icon-box">🔤</span>
+            <span>TYPOGRAPHY</span>
+          </div>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="header">
+          <h1>DASHBOARD</h1>
+          <div class="header-buttons">
+            <button class="btn btn-secondary">
+              <span>📄 Documentation</span>
+            </button>
+            <button class="btn btn-primary">
+              <span>⬇️ Download</span>
+            </button>
+            <div class="user-icon">👤</div>
+          </div>
+        </div>
+
+        <div class="tabs">
+          <div class="tab">Accounts</div>
+          <div class="tab">Purchases</div>
+          <div class="tab">Sessions</div>
+        </div>
+
+        <div class="chart-container">
+          <div class="chart-header">
+            <p>Total Shipments</p>
+            <h2>Performance</h2>
+          </div>
+          <svg width="100%" height="200" viewBox="0 0 800 200">
+            <path
+              d="M0,100 Q100,150 200,130 T400,70 T600,140 T800,50"
+              fill="none"
+              stroke="#e83e8c"
+              stroke-width="3"
+            />
+            <circle cx="0" cy="100" r="5" fill="#e83e8c" />
+            <circle cx="200" cy="130" r="5" fill="#e83e8c" />
+            <circle cx="400" cy="70" r="5" fill="#e83e8c" />
+            <circle cx="600" cy="140" r="5" fill="#e83e8c" />
+            <circle cx="800" cy="50" r="5" fill="#e83e8c" />
+
+            <!-- X-axis labels -->
+            <text x="0" y="190" fill="#8b92b2" font-size="12">JAN</text>
+            <text x="100" y="190" fill="#8b92b2" font-size="12">FEB</text>
+            <text x="200" y="190" fill="#8b92b2" font-size="12">MAR</text>
+            <text x="300" y="190" fill="#8b92b2" font-size="12">APR</text>
+            <text x="400" y="190" fill="#8b92b2" font-size="12">MAY</text>
+            <text x="500" y="190" fill="#8b92b2" font-size="12">JUN</text>
+            <text x="600" y="190" fill="#8b92b2" font-size="12">JUL</text>
+            <text x="700" y="190" fill="#8b92b2" font-size="12">AUG</text>
+          </svg>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-title">Total Shipments</div>
+            <div class="stat-value">🔔 763,215</div>
+            <svg
+              width="100%"
+              height="100"
+              viewBox="0 0 300 100"
+              class="stat-chart"
+            >
+              <path
+                d="M0,80 Q50,40 100,60 T200,20 T300,80"
+                fill="none"
+                stroke="#e83e8c"
+                stroke-width="2"
+              />
+              <circle cx="0" cy="80" r="4" fill="#e83e8c" />
+              <circle cx="100" cy="60" r="4" fill="#e83e8c" />
+              <circle cx="200" cy="20" r="4" fill="#e83e8c" />
+              <circle cx="300" cy="80" r="4" fill="#e83e8c" />
+            </svg>
+          </div>
+          <div class="stat-card">
+            <div class="stat-title">Daily Sales</div>
+            <div class="stat-value">🔵 3,500€</div>
+            <svg
+              width="100%"
+              height="100"
+              viewBox="0 0 300 100"
+              class="stat-chart"
+            >
+              <rect x="30" y="60" width="40" height="40" fill="#007bff" />
+              <rect x="90" y="40" width="40" height="60" fill="#007bff" />
+              <rect x="150" y="20" width="40" height="80" fill="#007bff" />
+              <rect x="210" y="60" width="40" height="40" fill="#007bff" />
+            </svg>
+          </div>
+          <div class="stat-card">
+            <div class="stat-title">Completed Tasks</div>
+            <div class="stat-value">🟢 12,100K</div>
+            <svg
+              width="100%"
+              height="100"
+              viewBox="0 0 300 100"
+              class="stat-chart"
+            >
+              <path
+                d="M0,80 Q75,20 150,60 T300,30"
+                fill="none"
+                stroke="#4caf50"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="settings-icon">⚙️</div>
+  </body>
+</html>
