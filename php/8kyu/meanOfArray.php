@@ -24,4 +24,4 @@ $this->assertSame(2, get_average([2, 2, 2, 2]));
 $this->assertSame(3, get_average([1, 2, 3, 4, 5]));
 $this->assertSame(1, get_average([1, 1, 1, 1, 1, 1, 1, 2]));
 }
-}
+}.
