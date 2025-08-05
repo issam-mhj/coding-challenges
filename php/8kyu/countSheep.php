@@ -18,7 +18,7 @@ function countsheep($num)
     return $string;
 }
 ?>
-// Test cases
+<!-- Test cases -->
 class MyTest extends TestCase
 {
 public function test_static_operations()
